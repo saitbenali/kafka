@@ -1,0 +1,5 @@
+com/example/kafkademo/service/ProducerService.class
+com/example/kafkademo/web/MessageController.class
+com/example/kafkademo/service/ConsumerService.class
+com/example/kafkademo/KafkaSpringDemoApplication.class
+com/example/kafkademo/config/KafkaTopicConfig.class
