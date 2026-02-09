@@ -1,8 +1,12 @@
 package com.example.kafkademo.service;
 
 import com.example.kafkademo.dto.MessageDTO;
+import org.apache.kafka.clients.producer.RecordMetadata;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class ProducerService {
@@ -15,6 +19,16 @@ public class ProducerService {
     }
 
     public void sendMessage(MessageDTO message) {
-        kafkaTemplate.send(TOPIC, message);
+        CompletableFuture<SendResult<String, MessageDTO>> future = kafkaTemplate.send(TOPIC, message.getId(), message);
+
+        future.whenComplete((result, ex) -> {
+            if (ex != null) {
+                System.err.printf("Failed to send message key=%s: %s%n", message.getId(), ex.getMessage());
+            } else if (result != null) {
+                RecordMetadata meta = result.getRecordMetadata();
+                System.out.printf("Produced message key=%s to topic=%s partition=%d offset=%d%n",
+                        message.getId(), meta.topic(), meta.partition(), meta.offset());
+            }
+        });
     }
 }
