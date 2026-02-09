@@ -1,5 +1,7 @@
-com/example/kafkademo/service/ProducerService.class
+com/example/kafkademo/dto/MessageDTO.class
+com/example/kafkademo/config/KafkaJsonConfig.class
 com/example/kafkademo/web/MessageController.class
+com/example/kafkademo/config/KafkaTopicConfig.class
+com/example/kafkademo/service/ProducerService.class
 com/example/kafkademo/service/ConsumerService.class
 com/example/kafkademo/KafkaSpringDemoApplication.class
-com/example/kafkademo/config/KafkaTopicConfig.class

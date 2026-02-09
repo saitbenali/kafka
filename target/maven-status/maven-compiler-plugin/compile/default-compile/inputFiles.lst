@@ -1,5 +1,7 @@
 /workspaces/kafka/src/main/java/com/example/kafkademo/service/ConsumerService.java
 /workspaces/kafka/src/main/java/com/example/kafkademo/config/KafkaTopicConfig.java
 /workspaces/kafka/src/main/java/com/example/kafkademo/KafkaSpringDemoApplication.java
+/workspaces/kafka/src/main/java/com/example/kafkademo/config/KafkaJsonConfig.java
 /workspaces/kafka/src/main/java/com/example/kafkademo/web/MessageController.java
 /workspaces/kafka/src/main/java/com/example/kafkademo/service/ProducerService.java
+/workspaces/kafka/src/main/java/com/example/kafkademo/dto/MessageDTO.java

@@ -1,5 +1,6 @@
 package com.example.kafkademo.web;
 
+import com.example.kafkademo.dto.MessageDTO;
 import com.example.kafkademo.service.ProducerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,16 +9,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class MessageController {
 
-    public ProducerService producerService;
+    private final ProducerService producer;
 
-    public MessageController(ProducerService producerService) {
-        this.producerService = producerService;
+    public MessageController(ProducerService producer) {
+        this.producer = producer;
     }
 
     @PostMapping("/publish")
-    public ResponseEntity<String> publish(@RequestParam String message) {
-        producerService.sendMessage(message);
+    public ResponseEntity<String> publish(@RequestBody MessageDTO message) {
+        producer.sendMessage(message);
         return ResponseEntity.ok("Sent: " + message);
     }
-
 }
