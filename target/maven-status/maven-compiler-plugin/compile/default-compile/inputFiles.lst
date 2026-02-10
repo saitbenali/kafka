@@ -5,3 +5,4 @@
 /workspaces/kafka/src/main/java/com/example/kafkademo/web/MessageController.java
 /workspaces/kafka/src/main/java/com/example/kafkademo/service/ProducerService.java
 /workspaces/kafka/src/main/java/com/example/kafkademo/dto/MessageDTO.java
+/workspaces/kafka/src/main/java/com/example/kafkademo/config/KafkaErrorHandlerConfig.java

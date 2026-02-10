@@ -20,4 +20,10 @@ public class KafkaTopicConfig {
     public NewTopic demoTopic() {
         return new NewTopic(TOPIC, partitions, replicationFactor);
     }
+
+    @Bean
+    public NewTopic demoTopicDLT() {
+        // crée le topic demo-topic.DLT avec même nombre de partitions
+        return new NewTopic(TOPIC + ".DLT", partitions, replicationFactor);
+    }
 }
